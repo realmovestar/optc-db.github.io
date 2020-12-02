@@ -48,7 +48,7 @@ directives.characterTable = function($rootScope, $timeout, $compile, $storage) {
                         while ((classes.match(new RegExp(",", "g")) || []).length >= 1) classes = classes.replace(",", "/");
                         var classess = classes.split('/');
                         //console.log(classess);
-                        var classesHtml = '<span class="cell-' + classess[4] + '">' + classess[4] + '</span>, <span class="cell-' + classess[5] + '">' + classess[5] + '</span>';
+                        var classesHtml = '<span class="cell-' + classess[classess.length - 2] + '">' + classess[classess.length - 2] + '</span>, <span class="cell-' + classess[classess.length - 1] + '">' + classess[classess.length - 1] + '</span>';
                         $(classBox).html(classesHtml);
                     }
                     $(typeBox).addClass('cell-' + type);
@@ -435,8 +435,11 @@ directives.addTags = function($stateParams, $rootScope) {
             if (flags.rr) element.append($('<span class="tag flag">Rare Recruit only</div>'));
             if (flags.lrr) element.append($('<span class="tag flag">Limited Rare Recruit only</div>'));
             if (flags.tmlrr) element.append($('<span class="tag flag">Treasure Map Sugo-fest Limited Rare Recruit only</div>'));
+            if (flags.kclrr) element.append($('<span class="tag flag">Kizuna Clash Sugo-fest Limited Rare Recruit only</div>'));
+            if (flags.pflrr) element.append($('<span class="tag flag">Pirate Rumble Sugo-fest Limited Rare Recruit only</div>'));
             if (flags.promo) element.append($('<span class="tag flag">Promo-code only</div>'));
             if (flags.shop) element.append($('<span class="tag flag">Rayleigh Shop Unit</div>'));
+            if (flags.tmshop) element.append($('<span class="tag flag">Trade Port Unit</div>'));
             if (flags.special) element.append($('<span class="tag flag">One time only characters</div>'));
             if (CharUtils.checkFarmable(id, { 'Story Island': true }))
                 element.append($('<span class="tag flag">Story mode only</div>'));

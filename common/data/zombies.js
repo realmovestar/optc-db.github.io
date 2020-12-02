@@ -65,6 +65,9 @@ window.zombies = {
         type: 'healer',
         multiplier: 10
     },
+    353: { // Zephyr
+        type: 'healer',
+    },
     423: { // Brook
         type: 'zombie',
         threshold: 0.7
@@ -471,7 +474,7 @@ window.zombies = {
     },
     1747: { // Boa
         type: 'healer',
-        amount: 1000
+        //amount: 1000
     },
     1750: { // Law
         type: 'healer',
@@ -564,6 +567,13 @@ window.zombies = {
     2054: { // Headcracker
         type: 'zombie',
         threshold: 0.5
+    },
+    2108: { // Big Mom
+        type: 'healer',
+        multiplier: 0.5
+    },
+    2109: { // Big Mom
+        type: 'healer',
     },
     2123: { // Neptune
         type: 'healer',
@@ -662,13 +672,13 @@ window.zombies = {
     },
     2303: { // Chiffon
         type: 'reducer',
-        multiplier: 0.2,//change this
-        threshold: 1.0//change this
+        multiplier: 0.2,
+        threshold: 1.0
     },
     2304: { // Chiffon
         type: 'reducer',
-        multiplier: 0.2,//change this
-        threshold: 1.0//change this
+        multiplier: 0.2,
+        threshold: 1.0
     },
     2343: { // Bavarois
         type: 'healer',
@@ -730,6 +740,10 @@ window.zombies = {
         type: 'healer',
         multiplier: 2
     },
+    2434: { // Boa Hancock
+        type: 'healer',
+        amount: 1200
+    },
     2443: { // Doflamingo
         type: 'healer',
     },
@@ -749,6 +763,217 @@ window.zombies = {
         type: 'healer',
         multiplier: 3
     },
+    2529: { // Neptune
+        type: 'healer',
+        multiplier: 5
+    },
+    2596: { // Big Mom
+        type: 'healer',
+        amount: 500
+    },
+    2598: { // Gastino
+        type: 'zombie',
+        threshold: 0.5//CHANGE THIS
+    },
+    2628: { // Smoothie
+        type: 'healer',
+        multiplier: 3
+    },
+    2630: { // Marguerite
+        type: 'healer',
+        multiplier: 3
+    },
+    2631: { // Shirahoshi
+        type: 'healer',
+        multiplier: 5
+    },
+    2652: { // Chopper
+        type: 'healer',
+        amount: 809
+    },
+    2653: { // Chopper
+        type: 'healer',
+        amount: 809
+    },
+    2665: { // Ann
+        type: 'healer',
+        multiplier: 2
+    },
+    2675: { // Nami
+        type: 'healer',
+        multiplier: 1
+    },
+    2676: { // Nami
+        type: 'healer',
+        multiplier: 2
+    },
+    2722: { // Marco
+        type: 'healer',
+        multiplier: 1
+    },
+    2723: { // Marco
+        type: 'healer',
+        multiplier: 2
+    },
+    2733: { // Magellan
+        type: 'healer',
+        multiplier: 3
+    },
+    2734: { // Magellan
+        type: 'healer',
+        multiplier: 3
+    },
+    2742: { // Koala
+        type: 'healer',
+        amount: 500
+    },
+    2743: { // Koala
+        type: 'healer',
+        amount: 500
+    },
+    2763: { // Nami
+        type: 'healer',
+    },
+    2766: { // Doffy
+        type: 'healer',
+        amount: 150
+    },
+    2767: { // Doffy
+        type: 'healer',
+        amount: 1000
+    },
+    2775: { // Komurasaki
+        type: 'healer',
+    },
+    2776: { // Komurasaki
+        type: 'healer',
+    },
+    2779: { // Chopper/Carrot
+        type: 'healer',
+        amount: 500
+    },
+    2780: { // Chopper/Carrot
+        type: 'healer',
+        amount: 1000
+    },
+    2792: { // Robin
+        type: 'healer',
+    },
+    2794: { // Shira
+        type: 'healer',
+        multiplier: 5
+    },
+    2815: { // O-Tama
+        type: 'healer',
+        amount: 500
+    },
+    2847: { // Mansherry
+        type: 'healer',
+        multiplier: 3
+    },
+    2855: { // Custard
+        type: 'healer',
+        multiplier: 3
+    },
+    2857: { // Flampe
+        type: 'healer',
+        multiplier: 5
+    },
+    2869: { // Komurasaki
+        type: 'healer',
+        multiplier: 5
+    },
+    2890: { // Moria
+        type: 'healer',
+        multiplier: 5
+    },
+    2911: { // Camie
+        type: 'healer',
+        multiplier: 5
+    },
+    2913: { // Shirahoshi
+        type: 'healer',
+    },
+    2915: { // Rebecca
+        type: 'healer',
+        multiplier: 5
+    },
+    2931: { // Otama
+        type: 'healer',
+        amount: 401
+    },
+    2939: { // Nami
+        type: 'healer',
+        multiplier: 3
+    },
+    2940: { // Nami
+        type: 'healer',
+        multiplier: 5
+    },
+    2951: { // Brook
+        type: 'zombie',
+        threshold: 0.99
+    },
+    2952: { // Brook
+        type: 'zombie',
+        threshold: 0.50//CHANGE THIS
+    },
+    2959: { // Sabo
+        type: 'healer',
+    },
+    2960: { // Sabo
+        type: 'healer',
+    },
+    2969: { // Enel
+        type: 'healer',
+        multiplier: 3
+    },
+    2970: { // Enel
+        type: 'healer',
+        multiplier: 5
+    },
+    3014: { // Ivancov
+        type: 'healer',
+        amount: 500
+    },
+    3015: { // Ivancov
+        type: 'healer',
+        amount: 1000
+    },
+    3026: { // Law
+        type: 'healer',
+        amount: 1500
+    },
+    3027: { // Law
+        type: 'healer',
+        amount: 1500
+    },
+    3079: { // Capone
+        type: 'healer',
+    },
+    3082: { // Usoland
+        type: 'healer',
+    },
+    3093: { // Perospero
+        type: 'healer',
+        multiplier: 5
+    },
+    3124: { // Kid
+        type: 'healer',
+        multiplier: 3
+    },
+    3162: { // Moria
+        type: 'healer',
+        amount: 1000
+    },
+    3376: {//Hera
+        type: 'healer',
+        multiplier: 1
+    },
+    3380: { // Condoriano
+        type: 'healer',
+        amount: 401
+    },
     5001: { // Smoker/Tashigi
         type: 'healer',
         amount: 300
@@ -763,11 +988,11 @@ window.zombies = {
     },
     5060: { // Smoothie&Oven
         type: 'healer',
-        multiplier: 0//Change this
+        multiplier: 1
     },
     5061: { // Smoothie&Oven
         type: 'healer',
-        multiplier: 0//Change this
+        multiplier: 1
     },
     5064: { // Smoothie&Oven
         type: 'healer',
@@ -776,5 +1001,188 @@ window.zombies = {
     5065: { // Smoothie&Oven
         type: 'healer',
         multiplier: 3
+    },
+    5075: { // Zoro/Sanji
+        type: 'healer',
+        multiplier: 2
+    },
+    5078: { // Chopper/Carrot
+        type: 'healer',
+        amount: 500
+    },
+    5080: { // Chopper/Carrot
+        type: 'healer',
+        amount: 1000
+    },
+    5081: { // Chopper/Carrot
+        type: 'healer',
+        amount: 1000
+    },
+    5083: { // Law
+        type: 'healer',
+    },
+    5084: { // Luffy/Law
+        type: 'healer',
+    },
+    5085: { // Luffy/Law
+        type: 'healer',
+    },
+    5087: { // Law
+        type: 'healer',
+    },
+    5088: { // Luffy/Law
+        type: 'healer',
+    },
+    5089: { // Luffy/Law
+        type: 'healer',
+    },
+    5106: { // Ivan/Bon Clay
+        type: 'healer',
+        multiplier: 2
+    },
+    5108: { // Ivan/Bon Clay
+        type: 'healer',
+        multiplier: 3
+    },
+    5109: { // Ivan/Bon Clay
+        type: 'healer',
+        multiplier: 3
+    },
+    5110: { // Ivan/Bon Clay
+        type: 'healer',
+        multiplier: 2
+    },
+    5112: { // Ivan/Bon Clay
+        type: 'healer',
+        multiplier: 3
+    },
+    5113: { // Ivan/Bon Clay
+        type: 'healer',
+        multiplier: 3
+    },
+    5168: { // Shira/Mansherry
+        type: 'healer',
+        multiplier: 5
+    },
+    5169: { // Shira/Mansherry
+        type: 'healer',
+        multiplier: 5
+    },
+    5170: { // Shira/Mansherry
+        type: 'healer',
+        multiplier: 5,
+        threshold: 0.5
+    },
+    5171: { // Shira/Mansherry
+        type: 'healer',
+        multiplier: 5,
+        threshold: 0.5
+    },
+    5172: { // Shira/Mansherry
+        type: 'healer',
+        multiplier: 5
+    },
+    5173: { // Shira/Mansherry
+        type: 'healer',
+        multiplier: 5
+    },
+    5174: { // Shira/Mansherry
+        type: 'healer',
+        multiplier: 5,
+        threshold: 0.5
+    },
+    5175: { // Shira/Mansherry
+        type: 'healer',
+        multiplier: 5,
+        threshold: 0.5
+    },
+    5255: { // Law/Chopper
+        type: 'healer',
+    },
+    5257: { // Law/Chopper
+        type: 'healer',
+    },
+    5258: { // Law/Chopper
+        type: 'healer',
+    },
+    5268: { // Luffy/Sanji
+        type: 'healer',
+        amount: 1000
+    },
+    5269: { // Luffy/Sanji
+        type: 'healer',
+        amount: 2000
+    },
+    5270: { // Luffy/Sanji
+        type: 'healer',
+        amount: 2000
+    },
+    5272: { // Luffy/Sanji
+        type: 'healer',
+        amount: 1000
+    },
+    5273: { // Luffy/Sanji
+        type: 'healer',
+        amount: 2000
+    },
+    5274: { // Luffy/Sanji
+        type: 'healer',
+        amount: 2000
+    },
+    5283: { // Vivi/Rebecca
+        type: 'healer',
+        amount: 2000
+    },
+    5284: { // Vivi/Rebecca
+        type: 'healer',
+        amount: 2000
+    },
+    5285: { // Vivi/Rebecca
+        type: 'healer',
+        amount: 4000
+    },
+    5286: { // Vivi/Rebecca
+        type: 'healer',
+        amount: 4000
+    },
+    5287: { // Vivi/Rebecca
+        type: 'healer',
+        amount: 2000
+    },
+    5288: { // Vivi/Rebecca
+        type: 'healer',
+        amount: 2000
+    },
+    5289: { // Vivi/Rebecca
+        type: 'healer',
+        amount: 4000
+    },
+    5290: { // Vivi/Rebecca
+        type: 'healer',
+        amount: 4000
+    },
+    5291: { // Shirahoshi/Mansherry
+        type: 'healer',
+    },
+    5292: { // Shirahoshi/Mansherry
+        type: 'healer',
+    },
+    5293: { // Shirahoshi/Mansherry
+        type: 'healer',
+    },
+    5294: { // Shirahoshi/Mansherry
+        type: 'healer',
+    },
+    5295: { // Shirahoshi/Mansherry
+        type: 'healer',
+    },
+    5296: { // Shirahoshi/Mansherry
+        type: 'healer',
+    },
+    5297: { // Shirahoshi/Mansherry
+        type: 'healer',
+    },
+    5298: { // Shirahoshi/Mansherry
+        type: 'healer',
     },
 };

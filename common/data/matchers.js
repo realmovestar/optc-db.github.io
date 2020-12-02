@@ -142,6 +142,24 @@ window.matchers = [
     },
 
     {
+        name: 'HP Threshold Requirement captains',
+        target: 'captain',
+        matcher: /if HP is (below|above)/i
+    },
+
+    {
+        name: 'Team Composition Requirement captains',
+        target: 'captain',
+        matcher: /your crew/i
+    },
+
+    {
+        name: 'Captain Swap Requirement captains',
+        target: 'captain',
+        matcher: /becomes your captain/i
+    },
+
+    {
         name: 'Positional captains',
         target: 'captain',
         matcher: /(after scoring|following a chain|perfect|great|good)/i
@@ -150,7 +168,7 @@ window.matchers = [
     {
         name: 'Beneficial Orb captains',
         target: 'captain',
-        matcher: /beneficial/i
+        matcher: /orbs beneficial/i
         //matcher: /Makes ((STR|DEX|QCK|PSY|INT|\[RCV\]|\[TND\])|((STR|DEX|QCK|PSY|INT|\[RCV\]|\[TND\]) and (STR|DEX|QCK|PSY|INT|\[RCV\]|\[TND\]))) orbs "beneficial"/i
     },
 
@@ -182,6 +200,12 @@ window.matchers = [
         name: 'Healers',
         target: 'captain',
         matcher: /Recovers/i
+    },
+
+    {
+        name: 'RCV based Healers',
+        target: 'captain',
+        matcher: /Recovers.+ character\'s RCV/i
     },
 
     {
@@ -225,13 +249,13 @@ window.matchers = [
     {
         name: 'Type-boosting specials',
         target: 'special',
-        matcher: /Boosts (ATK|HP|RCV|ATK and HP|ATK and RCV|HP and RCV|ATK, HP and RCV) of[^,]+(STR|DEX|QCK|PSY|INT)\b/i
+        matcher: /Boosts (ATK|HP|RCV|ATK and HP|ATK and RCV|HP and RCV|ATK, HP and RCV) of[^(,.)]+(STR|DEX|QCK|PSY|INT|Type)\b/i
     },
 
     {
         name: 'Class-boosting specials',
         target: 'special',
-        matcher: /Boosts (ATK|HP|RCV|ATK and HP|ATK and RCV|HP and RCV|ATK, HP and RCV) of[^,]+(Slasher|Striker|Fighter|Shooter|Free Spirit|Cerebral|Powerhouse|Driven)/i
+        matcher: /Boosts (ATK|HP|RCV|ATK and HP|ATK and RCV|HP and RCV|ATK, HP and RCV) of[^(,.)]+(Slasher|Striker|Fighter|Shooter|Free Spirit|Cerebral|Powerhouse|Driven)/i
     },
     
     {
@@ -241,12 +265,36 @@ window.matchers = [
     },
 
     {
+        name: 'HP Threshold Requirement specials',
+        target: 'special',
+        matcher: /if HP is (below|above)/i
+    },
+
+    {
+        name: 'Team Composition Requirement specials',
+        target: 'special',
+        matcher: /your crew/i
+    },
+
+    {
+        name: 'Team Orb Composition Requirement specials',
+        target: 'special',
+        matcher: /your( crew.+characters with|.+Captain's orb is)/i
+    },
+
+    {
+        name: 'Captain Composition Requirement specials',
+        target: 'special',
+        matcher: /your captain /i
+    },
+
+    {
         name: 'Universal ATK boosting specials',
         target: 'special',
-        matcher: /Boosts ATK[^,]+(all characters)/i
+        matcher: /Boosts ATK[^(,.)]+(all characters)/i
     },
     
-    {
+    /*{
         name: '1.5x ATK specials',
         target: 'special',
         matcher: /Boosts ATK\D*by 1.5x/i
@@ -268,42 +316,18 @@ window.matchers = [
         name: '2.25x ATK specials',
         target: 'special',
         matcher: /Boosts ATK\D*by 2.25x/i
+    },*/
+
+    {
+        name: 'ATK boosters',
+        target: 'special',
+        matcher: /boosts( own ATK| ATK of)/i
     },
 
     {
-        name: 'Conditional ATK boosters',
+        name: 'Base ATK boosters',
         target: 'special',
-        matcher: /Boosts ATK.+against.+enemies/i
-    },
-
-    {
-        name: 'Delay Conditional ATK boosters',
-        target: 'special',
-        matcher: /Boosts ATK.+against.+delayed.+enemies/i
-    },
-
-    {
-        name: 'Defense Reduction Conditional ATK boosters',
-        target: 'special',
-        matcher: /Boosts ATK.+against.+enemies.+reduced defense/i
-    },
-
-    {
-        name: 'Poison Conditional ATK boosters',
-        target: 'special',
-        matcher: /(Boosts ATK.+against.+(poisoned|strongly poisoned).+enemies|Boosts ATK.+against.+enemies.+inflicted with Toxic)/i
-    },
-
-    {
-        name: 'Following-turn ATK boosters',
-        target: 'special',
-        matcher: /(Following the activation.+boosts.+ATK|If during that turn.+boosts.+ATK)/i
-    },
-    
-    {
-        name: 'Color Affinity boosters',
-        target: 'special',
-        matcher: /Boosts the Color Affinity/i
+        matcher: /boosts( own base ATK| base ATK of)/i
     },
     
     {
@@ -311,17 +335,23 @@ window.matchers = [
         target: 'special',
         matcher: /Boost.+hit in the chain/i
     },
-    
+
     {
-        name: 'RCV boosters',
+        name: 'Universal Orb boosting specials',
         target: 'special',
-        matcher: /Boosts RCV/i
+        matcher: /amplifies\D+orb[^(,.)]+(all characters)/i
     },
 
     {
-        name: 'Orb lockers',
+        name: 'Type-boosting Orb boosting specials',
         target: 'special',
-        matcher: /locks (orbs|all orbs|orb|own orb)/i
+        matcher: /amplifies\D+orb([^,.]+)(STR|DEX|QCK|PSY|INT|Type)\b/i
+    },
+
+    {
+        name: 'Class-boosting Orb boosting specials',
+        target: 'special',
+        matcher: /amplifies\D+orb[^(,.)]+(Slasher|Striker|Fighter|Shooter|Free Spirit|Cerebral|Powerhouse|Driven)/i
     },
 
     {
@@ -331,6 +361,126 @@ window.matchers = [
     },
     
     {
+        name: 'Color Affinity boosters',
+        target: 'special',
+        matcher: /Boosts the Color Affinity/i
+    },
+
+    {
+        name: 'Status ATK boosters',
+        target: 'special',
+        matcher: /Boosts ATK.+against.+enemies/i
+    },
+
+    {
+        name: 'Delay Status ATK boosters',
+        target: 'special',
+        matcher: /Boosts ATK.+against.+delayed.+enemies/i
+    },
+
+    {
+        name: 'Defense Reduction Status ATK boosters',
+        target: 'special',
+        matcher: /Boosts ATK.+against.+enemies.+reduced defense/i
+    },
+
+    {
+        name: 'Increase Defense Status ATK boosters',
+        target: 'special',
+        matcher: /Boosts ATK.+against.+enemies.+increased defense/i
+    },
+
+    {
+        name: 'Poison Status ATK boosters',
+        target: 'special',
+        matcher: /(Boosts ATK.+against.+(poisoned|strongly poisoned).+enemies|Boosts ATK.+against.+enemies.+inflicted with Toxic)/i
+    },
+    
+    {
+        name: 'Chain Boosters',
+        target: 'special',
+        matcher: /Adds.+to Chain/i 
+    },
+    
+    {
+        name: 'Chain Lockers',
+        target: 'special',
+        matcher: /Locks the chain multiplier/i 
+    },
+
+    {
+        name: 'Following-turn ATK boosters',
+        target: 'special',
+        matcher: /(Following the activation.+boosts.+ATK|If during that turn.+boosts.+ATK)/i
+    },
+
+    {
+        name: 'Following-turn Buff Enabler',
+        target: 'special',
+        matcher: /(Following the activation|If during that turn)/i
+    },
+
+    {
+        name: 'Buff Duration Extender',
+        target: 'special',
+        matcher: /increases duration of any/i
+    },
+
+    {
+        name: 'Multiple-Turn boosting specials',
+        target: 'special',
+        matcher: /x for \d{1,} turns/i
+    },
+
+    {
+        name: 'Multiple-Turn Buff/Debuff specials',
+        target: 'special',
+        matcher: /for \d{1,} turns/i
+    },
+    
+    {
+        name: '1.5x Boost specials',
+        target: 'special',
+        matcher: /[Boosts |Amplifies ]\D*by 1.5x/i
+    },
+
+    {
+        name: '1.75x Boost specials',
+        target: 'special',
+        matcher: /[Boosts |Amplifies ]\D*by 1.75x/i
+    },
+
+    {
+        name: '2x Boost specials',
+        target: 'special',
+        matcher: /[Boosts |Amplifies ]\D*by 2x/i
+    },
+    
+    {
+        name: '2.25x Boost specials',
+        target: 'special',
+        matcher: /[Boosts |Amplifies ]\D*by 2.25x/i
+    },
+    
+    {
+        name: '2.5x Boost specials',
+        target: 'special',
+        matcher: /[Boosts |Amplifies ]\D*by 2.5x/i
+    },
+    
+    {
+        name: '2.75x Boost specials',
+        target: 'special',
+        matcher: /[Boosts |Amplifies ]\D*by 2.75x/i
+    },
+    
+    {
+        name: 'RCV boosters',
+        target: 'special',
+        matcher: /Boosts RCV/i
+    },
+    
+    /*{
         name: '1.5x Orb boost specials',
         target: 'special',
         matcher: /amplifies.+orb\D*by 1.5x/i
@@ -352,19 +502,7 @@ window.matchers = [
         name: '2.25x Orb boost specials',
         target: 'special',
         matcher: /amplifies.+orb\D*by 2.25x/i
-    },
-    
-    {
-        name: 'Chain Boosters',
-        target: 'special',
-        matcher: /Adds.+to Chain/i 
-    },
-    
-    {
-        name: 'Chain Lockers',
-        target: 'special',
-        matcher: /Locks the chain multiplier/i 
-    },
+    },*/
 
     {
         name: 'Orb chance boosters',
@@ -407,6 +545,12 @@ window.matchers = [
         name: 'Orb switchers',
         target: 'special',
         matcher: /switches orbs/i
+    },
+
+    {
+        name: 'Orb lockers',
+        target: 'special',
+        matcher: /locks (orbs|all orbs|orb|own orb)/i
     },
     
     {
@@ -451,6 +595,12 @@ window.matchers = [
         name: 'Delayers',
         target: 'special',
         matcher: /delays/i
+    },
+
+    {
+        name: 'Delay Immunity Ignorers',
+        target: 'special',
+        matcher: /ignores Delay Debuff Protection/i
     },
     
     {
@@ -502,6 +652,30 @@ window.matchers = [
     },
     
     {
+        name: 'End of Turn Damage Dealer',
+        target: 'special',
+        matcher: /(deals|cuts).+end of the turn/i
+    },
+
+    {
+        name: 'Health cutters',
+        target: 'special',
+        matcher: /Cuts.+current HP.+enem/i
+    },
+
+    {
+        name: 'HP-based damage dealers',
+        target: 'specialNotes',
+        matcher: /specialProportional/i
+    },
+    
+    {
+        name: 'Defense and Barrier Buff Ignoring damage dealer',
+        target: 'special',
+        matcher: /(Deals|Cuts).+ignore damage negating abilities and barriers/i
+    },
+    
+    {
         name: 'Additional Damage dealer',
         target: 'special',
         matcher: /Additional.+Damage/i
@@ -512,17 +686,23 @@ window.matchers = [
         target: 'special',
         matcher: /instantly defeat/i
     },
-    
-    {
-        name: 'Defense and Barrier Buff Ignoring damage dealer',
-        target: 'special',
-        matcher: /(Deals|Cuts).+ignore damage negating abilities and barriers/i
-    },
 
     {
         name: 'Healers',
         target: 'special',
         matcher: /Recovers/i
+    },
+
+    {
+        name: 'RCV based Healers',
+        target: 'special',
+        matcher: /Recovers.+ character\'s RCV/i
+    },
+
+    {
+        name: 'Remaining Health Healers',
+        target: 'special',
+        matcher: /Recovers.+missing HP/i
     },
 
     {
@@ -544,15 +724,33 @@ window.matchers = [
     },
 
     {
-        name: 'Health cutters',
+        name: 'Multiple-Turn Buff/Debuff Reducing specials',
         target: 'special',
-        matcher: /Cuts.+current HP.+enem/i
+        matcher: /by \d{1,} turns/i
     },
 
     {
-        name: 'HP-based damage dealers',
-        target: 'specialNotes',
-        matcher: /specialProportional/i
+        name: '2-3 Turn Buff/Debuff Reducing specials',
+        target: 'special',
+        matcher: /by (2|3){1,} turns/i
+    },
+
+    {
+        name: '4-5 Turn Buff/Debuff Reducing specials',
+        target: 'special',
+        matcher: /by (4|5){1,} turns/i
+    },
+
+    {
+        name: '7+ Turn Buff/Debuff Reducing specials',
+        target: 'special',
+        matcher: /by (7|8|9|10|11|12|13|14|15|16|17|18|19|20){1,} turns/i
+    },
+
+    {
+        name: 'Buff/Debuff Removing specials',
+        target: 'special',
+        matcher: /duration completely/i
     },
 
     {
@@ -610,7 +808,7 @@ window.matchers = [
     },
     
     {
-        name: 'Silence reducers',
+        name: 'Silence/Special Bind reducers',
         target: 'special',
         matcher: /(reduces|removes).+silence.+duration/i
     },
@@ -637,6 +835,18 @@ window.matchers = [
         name: 'Crew ATK DOWN reducer',
         target: 'special',
         matcher: /(removes|reduces).+ATK DOWN.+duration/i 
+    },
+
+    {
+        name: 'Crew RCV DOWN reducer',
+        target: 'special',
+        matcher: /(removes|reduces).+RCV DOWN.+duration/i 
+    },
+
+    {
+        name: 'Crew No Healing reducer',
+        target: 'special',
+        matcher: /(removes|reduces).+No Healing.+duration/i 
     },
 
     {
@@ -730,12 +940,6 @@ window.matchers = [
     },
     
     {
-        name: 'End of Turn Damage Dealer',
-        target: 'special',
-        matcher: /(deals|cuts).+end of the turn/i
-    },
-    
-    {
         name: 'Special cooldown reducers',
         target: 'special',
         matcher: /reduces special cooldown/i
@@ -758,6 +962,124 @@ window.matchers = [
         target: 'special',
         matcher: /makes PERFECTs easier to hit/i
     },
+    
+    /* * * * * Swap * * * * */
+
+    {
+        name: 'ATK boosters',
+        target: 'swap',
+        matcher: /Boosts.+ATK/i
+    },
+
+    {
+        name: 'Base ATK boosters',
+        target: 'swap',
+        matcher: /boosts( own base ATK| base ATK of)/i
+    },
+
+
+    {
+        name: 'Orb boosters',
+        target: 'swap',
+        matcher: /amplifies.+orb/i
+    },
+
+    
+    {
+        name: 'Color Affinity boosters',
+        target: 'swap',
+        matcher: /Boosts.+Color Affinity/i
+    },
+
+    {
+        name: 'Healers',
+        target: 'swap',
+        matcher: /Recovers/i
+    },
+
+    {
+        name: 'RCV based Healers',
+        target: 'swap',
+        matcher: /Recovers.+ character\'s RCV/i
+    },
+    
+    {
+        name: 'Orb Controllers',
+        target: 'swap',
+        matcher: /(Changes.+(orb|orbs))/i
+    },
+
+    {
+        name: 'Self-orb controllers',
+        target: 'swap',
+        matcher: /Changes.+own orb.+into/i
+    },
+
+    {
+        name: 'Orb randomizers',
+        target: 'swap',
+        matcher: /randomizes.+orb/i
+    },
+
+    {
+        name: 'Damage reducers',
+        target: 'swap',
+        matcher: /Reduces (any )?damage received/i
+    },
+    
+    {
+        name: 'End of Turn Damage Dealer',
+        target: 'swap',
+        matcher: /(deals|cuts).+end of each turn/i
+    },
+
+    {
+        name: 'Bind reducers',
+        target: 'swap',
+        matcher: /(reduces|removes)(.+and bind|.+, bind| bind).+duration/i
+    },
+
+    {
+        name: 'Despair reducers',
+        target: 'swap',
+        matcher: /(reduces|removes).+despair.+duration/i
+    },
+    
+    {
+        name: 'Silence/Special Bind reducers',
+        target: 'swap',
+        matcher: /(reduces|removes).+silence.+duration/i
+    },
+    
+    {
+        name: 'Paralysis reducers',
+        target: 'swap',
+        matcher: /(reduces|removes).+Paralysis.+duration/i 
+    },
+    
+    /*{
+        name: 'Burn reducers',
+        target: 'swap',
+        matcher: /(reduces|removes).+Burn.+duration/i 
+    },*/
+    
+    {
+        name: 'Slot Bind reducers',
+        target: 'swap',
+        matcher: /(reduces|removes).+Slot Bind.+duration/i 
+    },
+
+    {
+        name: 'Poison removers',
+        target: 'swap',
+        matcher: /(removes|reduces).+poison.+(duration completely|duration)/i 
+    },
+
+    /*{
+        name: 'Blindness reducers',
+        target: 'swap',
+        matcher: /(reduces|removes).+blindness.+duration/i
+    },*/
     
     /* * * * * Sailor * * * * */
     
@@ -810,7 +1132,7 @@ window.matchers = [
     },
     
     {
-        name: 'Silence reducers',
+        name: 'Silence/Special Bind reducers',
         target: 'sailor',
         matcher: /(reduces|removes|resists).+silence/i
     },
@@ -818,7 +1140,7 @@ window.matchers = [
     {
         name: 'Special Rewind Restorers',
         target: 'sailor',
-        matcher: /Restores (his|her) own special/i
+        matcher: /Restores own special/i
     },
     
     {
@@ -914,6 +1236,30 @@ window.matchers = [
     },
     
     {
+        name: 'Key Locked Limit Break',
+        target: 'limit',
+        matcher: /Locked/i
+    },
+    
+    {
+        name: 'Captain Upgrade Limit Break',
+        target: 'limit',
+        matcher: /Captain Ability/i
+    },
+    
+    {
+        name: '3rd Potential Ability',
+        target: 'limit',
+        matcher: /Acquire Potential 3/i
+    },
+    
+    {
+        name: 'No 3rd Potential Ability',
+        target: 'limit',
+        matcher: /^(.(?!Acquire Potential 3))*$/i
+    },
+    
+    {
         name: 'Enrage Potential Ability',
         target: 'limit',
         matcher: /Enrage/i
@@ -932,9 +1278,21 @@ window.matchers = [
     },
     
     {
-        name: 'Slot Bind Self-reduction Potential Ability',
+        name: 'Reduce Slot Bind duration Potential Ability',
         target: 'limit',
-        matcher: /Slot Bind Self-reduction/i
+        matcher: /Reduce Slot Bind duration/i
+    },
+    
+    {
+        name: 'Ship Bind Reduction Potential Ability',
+        target: 'limit',
+        matcher: /Reduce Ship Bind duration/i
+    },
+    
+    {
+        name: 'Sailor Despair Reduction Potential Ability',
+        target: 'limit',
+        matcher: /Reduce Sailor Despair duration/i
     },
     
     {
@@ -1006,54 +1364,6 @@ window.matchers = [
     },
     
     {
-        name: 'Type-boosting supports',
-        target: 'support',
-        matcher: /^[^,]+(STR|DEX|QCK|PSY|INT)\b/i
-    },
-
-    {
-        name: 'Class-boosting supports',
-        target: 'support',
-        matcher: /^[^,]+(Slasher|Striker|Fighter|Shooter|Free Spirit|Cerebral|Powerhouse|Driven)/i
-    },
-    
-    {
-        name: 'ATK Boosting Support',
-        target: 'support',
-        matcher: /Adds.+ATK/i
-    },
-    
-    {
-        name: 'HP Boosting Support',
-        target: 'support',
-        matcher: /Adds.+HP/i
-    },
-    
-    {
-        name: 'RCV Boosting Support',
-        target: 'support',
-        matcher: /Adds.+RCV/i
-    },
-    
-    {
-        name: 'Orb Controllers',
-        target: 'support',
-        matcher: /(Changes.+(orb|orbs))/i
-    },
-    
-    {
-        name: 'Damage Reduction supports',
-        target: 'support',
-        matcher: /Reduces damage received/i
-    },
-
-    {
-        name: 'Healers',
-        target: 'support',
-        matcher: /Recovers/i
-    },
-    
-    {
         name: 'Final Stage Activated Support',
         target: 'support',
         matcher: /final stage/i
@@ -1068,6 +1378,312 @@ window.matchers = [
     {
         name: 'Debuff Activated Support',
         target: 'support',
-        matcher: /when you are inflicted with/i
+        matcher: /when an enemy inflicts/i
+    },
+    
+    {
+        name: 'Tap Timing Activated Support',
+        target: 'support',
+        matcher: /PERFECT|GREAT|GOOD/
+    },
+    
+    {
+        name: 'Type-Supporting supports',
+        target: 'support',
+        matcher: /^[^,]+(STR|DEX|QCK|PSY|INT)\b/i
+    },
+
+    {
+        name: 'Class-Supporting supports',
+        target: 'support',
+        matcher: /^[^,]+(Slasher|Striker|Fighter|Shooter|Free Spirit|Cerebral|Powerhouse|Driven)/i
+    },
+    
+    {
+        name: 'ATK Boosting Support',
+        target: 'support',
+        matcher: /Adds.+%.+ATK/i
+    },
+    
+    {
+        name: 'HP Boosting Support',
+        target: 'support',
+        matcher: /Adds.+%.+HP/i
+    },
+    
+    {
+        name: 'RCV Boosting Support',
+        target: 'support',
+        matcher: /Adds.+%.+RCV/i
+    },
+
+    {
+        name: 'ATK boosters',
+        target: 'support',
+        matcher: /boosts( own ATK| ATK of)/i
+    },
+    
+    {
+        name: 'Combo Boost Specials',
+        target: 'support',
+        matcher: /Boost.+hit in the chain/i
+    },
+
+    {
+        name: 'Orb boosters',
+        target: 'support',
+        matcher: /amplifies.+orb/i
+    },
+    
+    {
+        name: 'Color Affinity boosters',
+        target: 'support',
+        matcher: /Boosts the Color Affinity/i
+    },
+
+    {
+        name: 'Status ATK boosters',
+        target: 'support',
+        matcher: /Boosts ATK.+against.+enemies/i
+    },
+
+    {
+        name: 'Delay Status ATK boosters',
+        target: 'support',
+        matcher: /Boosts ATK.+against.+delayed.+enemies/i
+    },
+
+    {
+        name: 'Defense Reduction Status ATK boosters',
+        target: 'support',
+        matcher: /Boosts ATK.+against.+enemies.+reduced defense/i
+    },
+
+    {
+        name: 'Poison Status ATK boosters',
+        target: 'support',
+        matcher: /(Boosts ATK.+against.+(poisoned|strongly poisoned).+enemies|Boosts ATK.+against.+enemies.+inflicted with Toxic)/i
+    },
+
+    {
+        name: 'Specific Enemy ATK boosters',
+        target: 'support',
+        matcher: /Boosts the supported character's ATK.+against/i
+    },
+    
+    {
+        name: 'Chain Boosters',
+        target: 'support',
+        matcher: /Adds.+to Chain/i 
+    },
+    
+    {
+        name: 'Chain Lockers',
+        target: 'support',
+        matcher: /Locks the chain multiplier/i 
+    },
+    
+    {
+        name: 'Additional Damage dealer',
+        target: 'support',
+        matcher: /Additional.+Damage/i
+    },
+    
+    {
+        name: 'Orb Controllers',
+        target: 'support',
+        matcher: /(Changes.+(orb|orbs))/i
+    },
+
+    {
+        name: 'Orb randomizers',
+        target: 'support',
+        matcher: /randomizes.+orb/i
+    },
+
+    {
+        name: 'Orb switchers',
+        target: 'support',
+        matcher: /switches orbs/i
+    },
+
+    {
+        name: 'Orb lockers',
+        target: 'support',
+        matcher: /locks (the supported character's orb|orbs|all orbs|orb|own orb)/i
+    },
+    
+    {
+        name: 'Beneficial Orb support',
+        target: 'support',
+        matcher: /beneficial/i
+    },
+    
+    {
+        name: 'Damage Reduction supports',
+        target: 'support',
+        matcher: /Reduces damage received/i
+    },
+    
+    {
+        name: 'Damage Reduction Buff supports',
+        target: 'support',
+        matcher: /Reduces damage received.+turn/i
+    },
+
+    {
+        name: 'Defense reducers',
+        target: 'support',
+        matcher: /Reduces the defense/i
+    },
+
+    {
+        name: 'Delayers',
+        target: 'support',
+        matcher: /delays/i
+    },
+
+    {
+        name: 'Healers',
+        target: 'support',
+        matcher: /Recovers/i
+    },
+
+    {
+        name: 'RCV based Healers',
+        target: 'support',
+        matcher: /Recovers.+ character\'s RCV/i
+    },
+
+    {
+        name: 'Bind reducers',
+        target: 'support',
+        matcher: /(reduces|removes).+bind.+duration/i
+    },
+
+    {
+        name: 'Despair reducers',
+        target: 'support',
+        matcher: /(reduces|removes).+despair.+duration/i
+    },
+    
+    {
+        name: 'Silence/Special Bind reducers',
+        target: 'support',
+        matcher: /(reduces|removes).+silence.+duration/i
+    },
+    
+    {
+        name: 'Paralysis reducers',
+        target: 'support',
+        matcher: /(reduces|removes).+Paralysis.+duration/i 
+    },
+    
+    {
+        name: 'Burn reducers',
+        target: 'support',
+        matcher: /(reduces|removes).+Burn.+duration/i 
+    },
+
+    {
+        name: 'Blindness reducers',
+        target: 'support',
+        matcher: /(reduces|removes).+blindness.+duration/i
+    },
+    
+    {
+        name: 'Chain Multiplier Limit and Chain Lock reducer',
+        target: 'support',
+        matcher: /(removes|reduces).+Chain Multiplier Limit/i 
+    },
+    
+    {
+        name: 'Chain Coefficient Reduction reducer',
+        target: 'support',
+        matcher: /(removes|reduces).+Chain Coefficient Reduction/i 
+    },
+    
+    {
+        name: 'Special cooldown reducers',
+        target: 'support',
+        matcher: /reduces special cooldown/i
+    },
+
+    {
+        name: 'Poison removers',
+        target: 'support',
+        matcher: /(removes|reduces).+poison.+duration completely/i 
+    },
+
+    {
+        name: 'Crew ATK DOWN reducer',
+        target: 'support',
+        matcher: /(removes|reduces).+ATK DOWN.+duration/i 
+    },
+
+    {
+        name: 'Crew Increase Damage Taken reducer',
+        target: 'support',
+        matcher: /(removes|reduces).+Increase Damage Taken.+duration/i 
+    },
+
+    /*{
+        name: 'Enemy End of Turn Heal buff reducer',
+        target: 'support',
+        matcher: /(removes|reduces).+End of Turn Heal.+duration/i 
+    },*/
+
+    {
+        name: 'Enemy End of Turn Damage/Percent Cut buff reducer',
+        target: 'support',
+        matcher: /(removes|reduces).+End of Turn Damage\/Percent Cut.+duration/i 
+    },
+
+    {
+        name: 'Enemy Enrage buff reducer',
+        target: 'support',
+        matcher: /(removes|reduces).+Enrage.+duration/i 
+    },
+
+    {
+        name: 'Enemy ATK UP buff reducer',
+        target: 'support',
+        matcher: /(removes|reduces).+ATK UP.+duration/i 
+    },
+
+    {
+        name: 'Enemy Increased Defense reducer',
+        target: 'support',
+        matcher: /(removes|reduces).+Increased Defense.+duration/i 
+    },
+
+    {
+        name: 'Enemy Percent Damage Reduction reducer',
+        target: 'support',
+        matcher: /(removes|reduces).+Percent Damage Reduction.+duration/i 
+    },
+
+    /*{
+        name: 'Enemy Damage Nullification reducer',
+        target: 'support',
+        matcher: /(removes|reduces).+Damage Nullification.+duration/i 
+    },*/
+
+    {
+        name: 'Enemy Threshold Damage Reduction reducer',
+        target: 'support',
+        matcher: /(removes|reduces).+Threshold Damage Reduction.+duration/i 
+    },
+
+    {
+        name: 'Enemy Barrier reducer',
+        target: 'support',
+        matcher: /(removes|reduces).+Barrier .*duration/i 
+    },
+
+    {
+        name: 'Enemy Resilience reducer',
+        target: 'support',
+        matcher: /(removes|reduces).+Resilience.+duration/i 
     },
 ];
